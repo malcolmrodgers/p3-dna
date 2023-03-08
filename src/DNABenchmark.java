@@ -31,7 +31,7 @@ public class DNABenchmark {
 	public static void main(String[] args)
 			throws Exception {
 		// Can set the data file to benchmark here
-		String fileName = "data/ecoli_small.txt";
+		String fileName = "/Users/malcolmrodgers/Documents/Classes/Spring '23/CS201/Projects/p3-dna/data/ecoli_small.txt";
 		File file = new File(fileName);
 		mySource = dnaFromScanner(new Scanner(file));
 
