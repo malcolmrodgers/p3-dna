@@ -54,6 +54,14 @@ public class LinkStrand implements IDnaStrand {
             myFirst.next = new Node(dna, null);
             myLast = myFirst.next;
         }
+        else {
+            myLast.next = new Node(dna, null);
+            myLast = myLast.next;
+        }
+
+        mySize += dna.length();
+        myAppends += 1;
+        return this;
     }
 
     @Override
@@ -71,6 +79,18 @@ public class LinkStrand implements IDnaStrand {
     public char charAt(int index) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'charAt'");
+    }
+
+    public String toString () {
+        Node current = this.myFirst;
+        StringBuilder sb = new StringBuilder();
+
+        while (current.next != null) {
+            sb.append(current.info);
+            current = current.next;
+        }
+        return sb.toString();
+
     }
     
 }
