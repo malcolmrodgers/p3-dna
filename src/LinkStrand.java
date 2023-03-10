@@ -66,8 +66,25 @@ public class LinkStrand implements IDnaStrand {
 
     @Override
     public IDnaStrand reverse() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'reverse'");
+    
+    Node current = this.myFirst;
+    StringBuilder first = new StringBuilder(current.info);
+    first.reverse();
+
+    LinkStrand rev = new LinkStrand(first.toString());
+    current = current.next;
+
+    While (current != null) {
+        StringBuilder myNodeString = new StringBuilder(current.info);
+        myNodeString.reverse();
+
+        Node newNode = new Node(current.toString());
+
+        rev.mySize += newNode.info.length();
+        newNode.next = rev.myFirst;
+        rev.myFirst = newNode;
+    }
+
     }
 
     @Override
